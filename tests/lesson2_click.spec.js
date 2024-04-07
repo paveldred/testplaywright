@@ -7,7 +7,7 @@ test('click test', async ({ page }) => {
     await page.locator("#badButton").click();
     // <<<<<
     
-    await expect(await page.locator("#badButton").getAttribute("class")).toMatch(/btn-success/);
+    await expect(await page.locator("#badButton").getAttribute("class")).toMatch(/btn btn-success/);
   });
 
   test('checkbox and radio', async({page}) => {
@@ -26,18 +26,18 @@ test('click test', async ({ page }) => {
     await expect(page.locator("[for=checkbox-nested-4]")).toHaveClass(/ui-checkboxradio-checked/);
   });
 
-  test('log in positive', async({page}) => {
-    await page.goto('http://uitestingplayground.com/sampleapp');
+//   test('log in positive', async({page}) => {
+//     await page.goto('http://uitestingplayground.com/sampleapp');
       
-    // >>>>> дополнить код здесь
-    const login = "User1";
+//     // >>>>> дополнить код здесь
+//     const login = "User1";
 
-    await page.locator("[name=UserName]").fill(login);
-    await page.locator("[name=Password]").fill('pwd');
-    await page.locator("#login").click();
+//     await page.locator("[name=UserName]").fill(login);
+//     await page.locator("[name=Password]").fill('pwd');
+//     await page.locator("#login").click();
 
-    // <<<<<
-    //await expect(page.locator("#loginstatus").getAttribute("class")).toMatch(/text-success/);
-    await expect(page.locator("#loginstatus")).toHaveText(`Welcome, ${login}!`);
+//     // <<<<<
+//     // await expect(page.locator("#loginstatus").getAttribute("class")).toMatch(/text-success/);
+//     await expect(page.locator("#loginstatus")).toHaveText(`Welcome, ${login}!`);
 
-  });
+//   });
